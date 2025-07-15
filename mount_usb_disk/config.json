@@ -1,0 +1,20 @@
+{
+  "name": "USB Disk Mounter",
+  "version": "1.0.0",
+  "slug": "mount_usb_disk",
+  "description": "Mounts external USB SSD at /media/ssd for Frigate.",
+  "startup": "services",
+  "boot": "auto",
+  "host_network": true,
+  "privileged": ["SYS_ADMIN"],
+  "devices": ["device:/dev"],
+  "schema": {
+    "mount_point": "str",
+    "device": "str"
+  },
+  "options": {
+    "mount_point": "/media/ssd",
+    "device": "/dev/sdb1",
+    "file_system" : "ext4"
+  }
+}
